@@ -797,6 +797,8 @@ MavlinkReceiver::handle_message_distance_sensor(mavlink_message_t *msg)
 	mavlink_distance_sensor_t dist_sensor;
 	mavlink_msg_distance_sensor_decode(msg, &dist_sensor);
 
+	PX4_INFO("range: %u; type: %u; id: %u; orientation: %u; covariance: %u", dist_sensor.current_distance, dist_sensor.type, dist_sensor.id, dist_sensor.orientation, dist_sensor.covariance);  // #mylog
+
 	struct distance_sensor_s d;
 	memset(&d, 0, sizeof(d));
 
