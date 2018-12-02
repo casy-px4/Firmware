@@ -73,9 +73,9 @@ The best way to interact with the simulated sensors of the UAV is using ROS.
 For each sensor, a related ROS topic streams the desired data. Considering
 the terrain follower drone, three range finder sensors publish distance data
 on the following topics:
-- /distance_forward: the forward range sensor -> (0.2, 0.0, -0.05) with a tilt angle of 1.05 radians.
-- /distance_middle: the central range sensor -> (0.0, 0.0, -0.05), with a tilt angle of 0.0 radians.
-- /distance_backward: the backward range sensor -> (-0.2, 0.0, -0.05), with a tilt angle of 1.05 radians.
+- **/distance_forward**: the forward range sensor -> (0.2, 0.0, -0.05) with a tilt angle of 1.05 radians.
+- **/distance_middle**: the central range sensor -> (0.0, 0.0, -0.05), with a tilt angle of 0.0 radians.
+- **/distance_backward**: the backward range sensor -> (-0.2, 0.0, -0.05), with a tilt angle of 1.05 radians.
 
 
 
