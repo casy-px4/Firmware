@@ -267,6 +267,8 @@ private:
 	parameters *_params;	///< pointer to ekf parameter struct (located in _ekf class instance)
 
 	DEFINE_PARAMETERS(
+		(ParamExtInt<px4::params::EKF2_RNG_FUSED>)
+		_rng_fused,
 		(ParamExtInt<px4::params::EKF2_MIN_OBS_DT>)
 		_obs_dt_min_ms,	///< Maximmum time delay of any sensor used to increse buffer length to handle large timing jitter (mSec)
 		(ParamExtFloat<px4::params::EKF2_MAG_DELAY>)
@@ -488,6 +490,7 @@ Ekf2::Ekf2():
 	_vehicle_local_position_pub(ORB_ID(vehicle_local_position)),
 	_vehicle_global_position_pub(ORB_ID(vehicle_global_position)),
 	_params(_ekf.getParamHandle()),
+	_rng_fused(_params->range_fused),
 	_obs_dt_min_ms(_params->sensor_interval_min_ms),
 	_mag_delay_ms(_params->mag_delay_ms),
 	_baro_delay_ms(_params->baro_delay_ms),

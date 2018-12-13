@@ -40,6 +40,16 @@
  */
 
 /**
+ * Specifies if rangefinder data come from 
+ * the range_sensor_fusion node.
+ * 
+ * @group EKF2
+ * @value 0 Range fused disabled
+ * @value 1 Range fused enabled
+ */
+PARAM_DEFINE_INT32(EKF2_RNG_FUSED, 1);
+
+/**
  * Minimum time of arrival delta between non-IMU observations before data is downsampled.
  * Baro and Magnetometer data will be averaged before downsampling, other data will be point sampled resulting in loss of information.
  *
